@@ -17,18 +17,15 @@ def close_db(error):
 
 @app.route('/')
 def home():
-    db = get_db()
-    db.execute('CREATE TABLE IF NOT EXISTS visits (count INTEGER)')
-    cur = db.execute('SELECT count FROM visits')
-    row = cur.fetchone()
-    if row:
-        count = row[0] + 1
-        db.execute('UPDATE visits SET count = ?', (count,))
-    else:
-        count = 1
-        db.execute('INSERT INTO visits (count) VALUES (1)')
-    db.commit()
-    return render_template('index.html', count=count)
+    return render_template('index.html')
+
+@app.route('/student-login')
+def student_login():
+    return render_template('student_login.html')
+
+@app.route('/club-login')
+def club_login():
+    return render_template('club_login.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
