@@ -41,8 +41,9 @@ def init_db():
     ''')
     db.commit()
 
-@app.before_first_request
-def setup():
+@app.cli.command('init-db')
+def init_db_command():
+    """Initializes the database."""
     reset_users_table()
     init_db()
     print('Initialized the database.')
