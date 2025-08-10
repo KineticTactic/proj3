@@ -27,5 +27,14 @@ def student_login():
 def club_login():
     return render_template('club_login.html')
 
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+@app.route('/feed')
+def user_feed():
+    return render_template('user_feed.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
