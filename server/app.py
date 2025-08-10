@@ -26,9 +26,11 @@ def init_db():
     ''')
     db.commit()
 
-@app.before_first_request
-def setup():
+@app.cli.command('init-db')
+def init_db_command():
+    """Clear the existing data and create new tables."""
     init_db()
+    print('Initialized the database.')
 
 @app.route('/')
 def home():
