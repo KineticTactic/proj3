@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, g
+from flask import Flask, render_template, request, redirect, url_for, g
 
 app = Flask(__name__)
 DATABASE = 'database.db'
@@ -15,6 +15,21 @@ def close_db(error):
     if db is not None:
         db.close()
 
+def init_db():
+    db = get_db()
+    db.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        )
+    ''')
+    db.commit()
+
+@app.before_first_request
+def setup():
+    init_db()
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -26,6 +41,21 @@ def student_login():
 @app.route('/club-login')
 def club_login():
     return render_template('club_login.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        db = get_db()
+        cur = db.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password))
+        user = cur.fetchone()
+        if user:
+            return redirect(url_for('home'))
+        else:
+            error = 'Invalid credentials'
+    return render_template('student_login.html', error=error)
 
 if __name__ == "__main__":
     app.run(debug=True)
