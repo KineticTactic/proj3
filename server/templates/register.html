@@ -8,23 +8,26 @@
         Create an Account
       </h2>
     </div>
-    <form class="mt-8 space-y-6" action="#" method="POST">
+    <form class="mt-8 space-y-6" action="{{ url_for('register') }}" method="POST">
       <div class="rounded-md shadow-sm">
         <div class="mb-2">
-          <label for="name" class="sr-only">Name</label>
-          <input id="name" name="name" type="text" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Name">
+          <label for="username" class="sr-only">Username</label>
+          <input id="username" name="username" type="text" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
         </div>
         <div class="mb-2">
           <label for="email-address" class="sr-only">Email address</label>
           <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
         </div>
         <div class="mb-2">
-          <label for="phone" class="sr-only">Phone Number</label>
-          <input id="phone" name="phone" type="tel" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Phone Number">
-        </div>
-        <div class="mb-2">
           <label for="password" class="sr-only">Password</label>
           <input id="password" name="password" type="password" autocomplete="new-password" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Create a password">
+        </div>
+        <div class="mb-2">
+          <label for="role" class="sr-only">Role</label>
+          <select id="role" name="role" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+            <option value="student">Student</option>
+            <option value="club">Club</option>
+          </select>
         </div>
       </div>
 
@@ -34,6 +37,12 @@
         </button>
       </div>
     </form>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+        <p style="color:green;">{{ success }}</p>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
