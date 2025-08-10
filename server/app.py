@@ -15,20 +15,35 @@ def close_db(error):
     if db is not None:
         db.close()
 
+def reset_users_table():
+    db = get_db()
+    # Check if 'users' table exists and has correct columns
+    try:
+        cur = db.execute("PRAGMA table_info(users)")
+        columns = [row[1] for row in cur.fetchall()]
+        required = {'username', 'password', 'email', 'role'}
+        if not required.issubset(set(columns)):
+            db.execute('DROP TABLE IF EXISTS users')
+    except sqlite3.OperationalError:
+        db.execute('DROP TABLE IF EXISTS users')
+    db.commit()
+
 def init_db():
     db = get_db()
     db.execute('''
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE NOT NULL,
-            password TEXT NOT NULL
+            password TEXT NOT NULL,
+            email TEXT,
+            role TEXT
         )
     ''')
     db.commit()
 
-@app.cli.command('init-db')
-def init_db_command():
-    """Clear the existing data and create new tables."""
+@app.before_first_request
+def setup():
+    reset_users_table()
     init_db()
     print('Initialized the database.')
 
@@ -44,9 +59,26 @@ def student_login():
 def club_login():
     return render_template('club_login.html')
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')
+    error = None
+    success = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+        role = request.form['role']
+        db = get_db()
+        try:
+            db.execute(
+                'INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)',
+                (username, password, email, role)
+            )
+            db.commit()
+            success = "Registration successful! You can now log in."
+        except sqlite3.IntegrityError:
+            error = "Username already exists. Please choose another."
+    return render_template('register.html', error=error, success=success)
 
 @app.route('/feed')
 def user_feed():
