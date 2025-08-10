@@ -68,7 +68,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
-        role = request.form['role']
+        role = request.form['role']  # "student" or "club"
         db = get_db()
         try:
             db.execute(
