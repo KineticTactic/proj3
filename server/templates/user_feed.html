@@ -16,104 +16,115 @@
 <!-- All Events Section -->
 <section>
     <h2 class="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-300">All Events</h2>
+    
+    <!-- Filter Chips -->
+    <div class="flex flex-wrap gap-2 mb-6">
+        <button class="filter-chip active bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold" data-category="all">All</button>
+        <button class="filter-chip bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="tech">Tech</button>
+        <button class="filter-chip bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="cultural">Cultural</button>
+        <button class="filter-chip bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="sports">Sports</button>
+        <button class="filter-chip bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="academic">Academic</button>
+        <button class="filter-chip bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold" data-category="social">Social</button>
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Card 1 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="tech">
+            <img src="https://picsum.photos/seed/tech1/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Tech</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Robotics Tech Talk</h3>
                 <p class="text-gray-600 text-sm mb-3">Aug 15, 2025 &mdash; 6:00 PM</p>
                 <p class="text-gray-700 text-base mb-4">Join us for an insightful talk on the future of robotics and automation.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/1" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 2 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="cultural">
+            <img src="https://picsum.photos/seed/cultural1/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Cultural</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Music Jam Session</h3>
                 <p class="text-gray-600 text-sm mb-3">Aug 18, 2025 &mdash; 8:00 PM</p>
                 <p class="text-gray-700 text-base mb-4">An open stage for all music lovers. Bring your instruments and voice!</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/2" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 3 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="sports">
+            <img src="https://picsum.photos/seed/sports1/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Sports</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Inter-Hostel Football</h3>
                 <p class="text-gray-600 text-sm mb-3">Aug 20, 2025 &mdash; 5:00 PM</p>
                 <p class="text-gray-700 text-base mb-4">Cheer for your hostel in the final match of the tournament.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/3" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 4 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="academic">
+            <img src="https://picsum.photos/seed/academic1/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Academic</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Thesis Writing Workshop</h3>
                 <p class="text-gray-600 text-sm mb-3">Aug 22, 2025 &mdash; 10:00 AM</p>
                 <p class="text-gray-700 text-base mb-4">Learn the key skills for writing a compelling and well-structured thesis.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/4" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 5 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="social">
+            <img src="https://picsum.photos/seed/social1/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Social</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Annual Cultural Fest</h3>
                 <p class="text-gray-600 text-sm mb-3">Sep 1-3, 2025 &mdash; All Day</p>
                 <p class="text-gray-700 text-base mb-4">Experience a vibrant celebration of culture, arts, and performances.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/5" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 6 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="tech">
+            <img src="https://picsum.photos/seed/tech2/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Tech</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Hackathon 2025</h3>
                 <p class="text-gray-600 text-sm mb-3">Sep 5, 2025 &mdash; 9:00 AM</p>
                 <p class="text-gray-700 text-base mb-4">A 24-hour coding competition with exciting prizes and challenges.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/6" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 7 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="academic">
+            <img src="https://picsum.photos/seed/academic2/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Academic</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Parliamentary Debate</h3>
                 <p class="text-gray-600 text-sm mb-3">Sep 8, 2025 &mdash; 2:00 PM</p>
                 <p class="text-gray-700 text-base mb-4">Witness sharp minds clash in a battle of wits and words.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/7" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 8 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="social">
+            <img src="https://picsum.photos/seed/social2/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Social</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Open Air Movie Night</h3>
                 <p class="text-gray-600 text-sm mb-3">Sep 10, 2025 &mdash; 9:00 PM</p>
                 <p class="text-gray-700 text-base mb-4">Enjoy a classic film under the stars with friends and popcorn.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/8" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
         <!-- Card 9 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-            <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-48 object-cover">
+        <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300" data-category="cultural">
+            <img src="https://picsum.photos/seed/cultural2/800/400" alt="Event Poster" class="w-full h-48 object-cover">
             <div class="p-4">
                 <span class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-2">Cultural</span>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Classical Dance Recital</h3>
                 <p class="text-gray-600 text-sm mb-3">Sep 12, 2025 &mdash; 7:00 PM</p>
                 <p class="text-gray-700 text-base mb-4">A mesmerizing evening of traditional Indian dance forms.</p>
-                <button class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">RSVP Now</button>
+                <a href="/event/9" class="block text-center w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
             </div>
         </div>
     </div>
@@ -127,7 +138,7 @@
         <div class="flex overflow-x-auto space-x-6 pb-4 no-scrollbar">
             <!-- Card 1 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/talk1/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">AI in Healthcare</h3>
                     <p class="text-sm text-gray-600">Sep 15, 2025</p>
@@ -135,7 +146,7 @@
             </div>
             <!-- Card 2 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/talk2/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Entrepreneurship Journey</h3>
                     <p class="text-sm text-gray-600">Sep 17, 2025</p>
@@ -143,7 +154,7 @@
             </div>
             <!-- Card 3 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/talk3/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Quantum Computing Intro</h3>
                     <p class="text-sm text-gray-600">Sep 20, 2025</p>
@@ -151,7 +162,7 @@
             </div>
             <!-- Card 4 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/talk4/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Ancient Civilizations</h3>
                     <p class="text-sm text-gray-600">Sep 22, 2025</p>
@@ -159,7 +170,7 @@
             </div>
             <!-- Card 5 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/talk5/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Marketing in Digital Age</h3>
                     <p class="text-sm text-gray-600">Sep 25, 2025</p>
@@ -174,7 +185,7 @@
         <div class="flex overflow-x-auto space-x-6 pb-4 no-scrollbar">
             <!-- Card 1 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/comp1/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Chess Tournament</h3>
                     <p class="text-sm text-gray-600">Oct 1, 2025</p>
@@ -182,7 +193,7 @@
             </div>
             <!-- Card 2 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/comp2/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Robo-Wars</h3>
                     <p class="text-sm text-gray-600">Oct 5, 2025</p>
@@ -190,7 +201,7 @@
             </div>
             <!-- Card 3 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/comp3/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Art Competition</h3>
                     <p class="text-sm text-gray-600">Oct 8, 2025</p>
@@ -198,7 +209,7 @@
             </div>
             <!-- Card 4 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/comp4/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Singing Idol</h3>
                     <p class="text-sm text-gray-600">Oct 12, 2025</p>
@@ -206,7 +217,7 @@
             </div>
             <!-- Card 5 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/comp5/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Photography Contest</h3>
                     <p class="text-sm text-gray-600">Oct 15, 2025</p>
@@ -221,7 +232,7 @@
         <div class="flex overflow-x-auto space-x-6 pb-4 no-scrollbar">
             <!-- Card 1 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/work1/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Pottery Making</h3>
                     <p class="text-sm text-gray-600">Nov 2, 2025</p>
@@ -229,7 +240,7 @@
             </div>
             <!-- Card 2 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/work2/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Creative Writing</h3>
                     <p class="text-sm text-gray-600">Nov 5, 2025</p>
@@ -237,7 +248,7 @@
             </div>
             <!-- Card 3 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/work3/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Mobile App Dev</h3>
                     <p class="text-sm text-gray-600">Nov 10, 2025</p>
@@ -245,7 +256,7 @@
             </div>
             <!-- Card 4 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/work4/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Personal Finance 101</h3>
                     <p class="text-sm text-gray-600">Nov 15, 2025</p>
@@ -253,7 +264,7 @@
             </div>
             <!-- Card 5 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/work5/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Graphic Design Basics</h3>
                     <p class="text-sm text-gray-600">Nov 20, 2025</p>
@@ -268,7 +279,7 @@
         <div class="flex overflow-x-auto space-x-6 pb-4 no-scrollbar">
             <!-- Card 1 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/social3/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Diwali Night</h3>
                     <p class="text-sm text-gray-600">Oct 28, 2025</p>
@@ -276,7 +287,7 @@
             </div>
             <!-- Card 2 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/social4/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Garba Night</h3>
                     <p class="text-sm text-gray-600">Oct 30, 2025</p>
@@ -284,7 +295,7 @@
             </div>
             <!-- Card 3 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/social5/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Food Festival</h3>
                     <p class="text-sm text-gray-600">Nov 8, 2025</p>
@@ -292,7 +303,7 @@
             </div>
             <!-- Card 4 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/social6/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">Christmas Gala</h3>
                     <p class="text-sm text-gray-600">Dec 24, 2025</p>
@@ -300,7 +311,7 @@
             </div>
             <!-- Card 5 -->
             <div class="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-                <img src="https://picsum.photos/800/400" alt="Event Poster" class="w-full h-40 object-cover">
+                <img src="https://picsum.photos/seed/social7/800/400" alt="Event Poster" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-bold">New Year's Eve Party</h3>
                     <p class="text-sm text-gray-600">Dec 31, 2025</p>
@@ -309,4 +320,34 @@
         </div>
     </section>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const eventCards = document.querySelectorAll('.event-card');
+
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', function () {
+                // Handle active chip styling
+                filterChips.forEach(c => {
+                    c.classList.remove('active', 'bg-indigo-600', 'text-white');
+                    c.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                this.classList.add('active', 'bg-indigo-600', 'text-white');
+                this.classList.remove('bg-gray-200', 'text-gray-700');
+
+                const category = this.getAttribute('data-category');
+
+                eventCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+
 {% endblock %}

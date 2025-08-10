@@ -85,6 +85,94 @@ def register():
 def user_feed():
     return render_template('user_feed.html')
 
+@app.route('/add-event')
+def add_event():
+    return render_template('add_event.html')
+
+@app.route('/club-dashboard')
+def club_dashboard():
+    # Dummy data for demonstration
+    events = [
+        {
+            "id": "tech1",
+            "title": "Robotics Tech Talk",
+            "date": "August 15, 2025",
+            "time": "6:00 PM",
+        },
+        {
+            "id": "cultural1",
+            "title": "Music Jam Session",
+            "date": "August 18, 2025",
+            "time": "8:00 PM",
+        },
+    ]
+    return render_template('club_dashboard.html', events=events)
+
+@app.route('/edit-event/<event_id>')
+def edit_event(event_id):
+    # Dummy data for demonstration
+    events = {
+        "tech1": {
+            "id": "tech1",
+            "title": "Robotics Tech Talk",
+            "date": "2025-08-15",
+            "time": "18:00",
+            "description": "Join us for an insightful talk on the future of robotics and automation. This session will cover the latest advancements, ethical considerations, and career opportunities in the field. Hosted by the University Robotics Club.",
+            "eligibility": "Open to all students and faculty. No prior knowledge of robotics is required.",
+        },
+        "cultural1": {
+            "id": "cultural1",
+            "title": "Music Jam Session",
+            "date": "2025-08-18",
+            "time": "20:00",
+            "description": "An open stage for all music lovers. Bring your instruments and voice!",
+            "eligibility": "Open to all students.",
+        },
+    }
+    event = events.get(event_id)
+    return render_template('edit_event.html', event=event)
+
+@app.route('/view-registrations/<event_id>')
+def view_registrations(event_id):
+    # Dummy data for demonstration
+    event = {
+        "tech1": {"title": "Robotics Tech Talk"},
+        "cultural1": {"title": "Music Jam Session"},
+    }.get(event_id)
+
+    registrations = [
+        {"id": "101", "name": "Alice Johnson", "email": "alice@example.com"},
+        {"id": "102", "name": "Bob Williams", "email": "bob@example.com"},
+        {"id": "103", "name": "Charlie Brown", "email": "charlie@example.com"},
+    ]
+    return render_template('view_registrations.html', event=event, registrations=registrations)
+
+@app.route('/event/<int:event_id>')
+def event_details(event_id):
+    # Dummy data for demonstration
+    events = {
+        1: {
+            "id": "tech1",
+            "title": "Robotics Tech Talk",
+            "date": "August 15, 2025",
+            "time": "6:00 PM",
+            "description": "Join us for an insightful talk on the future of robotics and automation. This session will cover the latest advancements, ethical considerations, and career opportunities in the field. Hosted by the University Robotics Club.",
+            "eligibility": "Open to all students and faculty. No prior knowledge of robotics is required.",
+            "google_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Robotics+Tech+Talk&dates=20250815T180000/20250815T190000&details=Join+us+for+an+insightful+talk+on+the+future+of+robotics+and+automation.&location=Online"
+        },
+        # Add other events here
+    }
+    event = events.get(event_id, {
+        "id": "default",
+        "title": "Event Not Found",
+        "date": "N/A",
+        "time": "N/A",
+        "description": "The event you are looking for does not exist.",
+        "eligibility": "N/A",
+        "google_calendar_link": "#"
+    })
+    return render_template('event_details.html', event=event)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
