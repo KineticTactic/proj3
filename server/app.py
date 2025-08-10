@@ -184,7 +184,7 @@ def login():
         cur = db.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password))
         user = cur.fetchone()
         if user:
-            return redirect(url_for('home'))
+            return redirect("/feed")
         else:
             error = 'Invalid credentials'
     return render_template('student_login.html', error=error)
